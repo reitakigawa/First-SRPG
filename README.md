@@ -1,0 +1,2 @@
+# First-DiscordBot
+はじめてのDiscord Bot 
