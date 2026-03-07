@@ -1,23 +1,23 @@
-# SRPG メイン処理フロー（プロトタイプ）
+# SRPG メイン処理フロー（Spring Boot / Java）
 
-このドキュメントは `src/srpg-engine.js` の処理を要約したものです。
+このドキュメントは `SrpgEngineService` の処理を要約したものです。
 
 ## 処理の流れ
-1. 設定ファイル（`config/stage1.json`）を読み込む。
-2. ユニット情報を初期化する（味方/敵、座標、ステータス）。
+1. `ScenarioLoader` が `src/main/resources/scenarios/*.json` を読み込む。
+2. `SrpgEngineService` がユニット情報を初期化する。
 3. ターンループを開始する。
-   - プレイヤーフェーズ
-   - 敵フェーズ
+   - PLAYER フェーズ
+   - ENEMY フェーズ
 4. 各ユニットは以下を1回実行する。
-   - 射程外なら移動
+   - 射程外なら最寄り敵に向けて移動
    - 射程内なら攻撃
    - 攻撃対象がいない場合は待機
-5. 行動後に勝敗判定を行う。
-   - 敵全滅: victory
-   - 味方全滅: defeat
+5. 行動ごとに勝敗判定を行う。
+   - 敵全滅: `victory`
+   - 味方全滅: `defeat`
 6. ターン上限に達した場合は `turn_limit` で終了。
 
-## 最低限実装している要件
+## 実装済み要件
 - ターン制（プレイヤー → 敵）
 - 1ターン行動（移動 / 攻撃 / 待機）
 - 移動後攻撃
@@ -25,7 +25,12 @@
 - 敵AI（最寄りの味方へ接近して攻撃）
 - 勝敗条件（敵全滅 / 味方全滅）
 
-## 実行方法
+## API 実行方法
 ```bash
-node src/srpg-engine.js
+./mvnw spring-boot:run
+# または mvn spring-boot:run
+```
+
+```bash
+curl "http://localhost:8080/api/srpg/simulate?scenario=stage1"
 ```

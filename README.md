@@ -1,11 +1,18 @@
 # First-DiscordBot
-はじめてのDiscord Bot 
+はじめてのDiscord Bot
 
 ## Documents
 - [SRPG 要件定義書](docs/srpg-requirements.md)
-- [SRPG メイン処理フロー（プロトタイプ）](docs/main-processing.md)
+- [SRPG メイン処理フロー（Spring Boot / Java）](docs/main-processing.md)
 
-## SRPG Prototype (Main Processing)
+## SRPG Backend Prototype (Spring Boot)
+
+### Run
 ```bash
-node src/srpg-engine.js
+mvn spring-boot:run
+```
+
+### Simulate Stage
+```bash
+curl "http://localhost:8080/api/srpg/simulate?scenario=stage1"
 ```

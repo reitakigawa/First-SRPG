@@ -4,7 +4,7 @@
   "playerUnits": [
     {
       "id": "p1",
-      "team": "player",
+      "team": "PLAYER",
       "name": "Knight",
       "hp": 24,
       "attack": 9,
@@ -15,7 +15,7 @@
     },
     {
       "id": "p2",
-      "team": "player",
+      "team": "PLAYER",
       "name": "Archer",
       "hp": 18,
       "attack": 7,
@@ -28,7 +28,7 @@
   "enemyUnits": [
     {
       "id": "e1",
-      "team": "enemy",
+      "team": "ENEMY",
       "name": "Bandit A",
       "hp": 16,
       "attack": 6,
@@ -39,7 +39,7 @@
     },
     {
       "id": "e2",
-      "team": "enemy",
+      "team": "ENEMY",
       "name": "Bandit B",
       "hp": 16,
       "attack": 6,
