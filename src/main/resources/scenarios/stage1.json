@@ -1,0 +1,52 @@
+{
+  "map": { "width": 10, "height": 10 },
+  "maxTurns": 20,
+  "playerUnits": [
+    {
+      "id": "p1",
+      "team": "PLAYER",
+      "name": "Knight",
+      "hp": 24,
+      "attack": 9,
+      "defense": 4,
+      "move": 3,
+      "range": 1,
+      "position": [1, 1]
+    },
+    {
+      "id": "p2",
+      "team": "PLAYER",
+      "name": "Archer",
+      "hp": 18,
+      "attack": 7,
+      "defense": 2,
+      "move": 3,
+      "range": 2,
+      "position": [2, 1]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": "e1",
+      "team": "ENEMY",
+      "name": "Bandit A",
+      "hp": 16,
+      "attack": 6,
+      "defense": 2,
+      "move": 3,
+      "range": 1,
+      "position": [7, 7]
+    },
+    {
+      "id": "e2",
+      "team": "ENEMY",
+      "name": "Bandit B",
+      "hp": 16,
+      "attack": 6,
+      "defense": 2,
+      "move": 3,
+      "range": 1,
+      "position": [8, 7]
+    }
+  ]
+}
