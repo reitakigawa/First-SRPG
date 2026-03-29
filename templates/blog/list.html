@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}ブログ一覧{% endblock %}
+
+{% block content %}
+  <h1>ブログ一覧</h1>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{{ url_for('blog_detail', slug=post.slug) }}">{{ post.title }}</a>
+        {% if post.date %}<span class="muted">({{ post.date }})</span>{% endif %}
+      </li>
+    {% else %}
+      <li>記事はまだありません。</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
