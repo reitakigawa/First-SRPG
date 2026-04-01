@@ -1,5 +1,5 @@
-# First-DiscordBot
-はじめてのDiscord Bot
+#おもちゃばこ
+
 
 ## Documents
 - [SRPG 要件定義書](docs/srpg-requirements.md)
