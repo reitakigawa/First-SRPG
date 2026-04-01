@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}ギャラリー一覧{% endblock %}
+
+{% block content %}
+  <h1>ギャラリー一覧</h1>
+  <ul>
+    {% for item in items %}
+      <li>
+        <a href="{{ url_for('gallery_detail', item_id=item.id) }}">{{ item.title }}</a>
+      </li>
+    {% else %}
+      <li>アイテムはまだありません。</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

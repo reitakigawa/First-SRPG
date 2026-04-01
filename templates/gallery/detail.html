@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block content %}
+  <p><a href="{{ url_for('gallery_index') }}">← ギャラリー一覧へ</a></p>
+  <h1>{{ item.title }}</h1>
+  <pre style="white-space: pre-wrap">{{ item | tojson(indent=2) }}</pre>
+{% endblock %}

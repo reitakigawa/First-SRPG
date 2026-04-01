@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}小説一覧{% endblock %}
+
+{% block content %}
+  <h1>小説一覧</h1>
+
+  <ul>
+    {% for novel in novels %}
+      <li>
+        <a href="{{ url_for('novels_detail', slug=novel.slug) }}">{{ novel.title }}</a>
+        {% if novel.date %}
+          <span class="muted">({{ novel.date }})</span>
+        {% endif %}
+      </li>
+    {% else %}
+      <li>公開中の小説はありません。</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

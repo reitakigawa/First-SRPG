@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ novel.title }}{% endblock %}
+
+{% block content %}
+  <p><a href="{{ url_for('novels_index') }}">← 小説一覧へ</a></p>
+
+  <h1>{{ novel.title }}</h1>
+  {% if novel.date %}
+    <p class="muted">公開日: {{ novel.date }}</p>
+  {% endif %}
+
+  <hr />
+
+  <article>
+    <pre style="white-space: pre-wrap">{{ novel.content }}</pre>
+  </article>
+{% endblock %}
