@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}ゲーム一覧{% endblock %}
+
+{% block content %}
+  <h1>ゲーム一覧</h1>
+  <ul>
+    {% for game in games %}
+      <li>
+        <a href="{{ url_for('games_detail', slug=game.slug) }}">{{ game.title }}</a>
+      </li>
+    {% else %}
+      <li>ゲームはまだありません。</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

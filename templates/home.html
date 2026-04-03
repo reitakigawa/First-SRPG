@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}ホーム{% endblock %}
+
+{% block content %}
+  <h1>最新コンテンツ</h1>
+
+  <section>
+    <h2>小説（最新3件）</h2>
+    <ul>
+      {% for novel in latest_novels %}
+        <li>
+          <a href="{{ url_for('novels_detail', slug=novel.slug) }}">{{ novel.title }}</a>
+          {% if novel.date %}<span class="muted">({{ novel.date }})</span>{% endif %}
+        </li>
+      {% else %}
+        <li>まだ小説はありません。</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>ブログ（最新3件）</h2>
+    <ul>
+      {% for post in latest_posts %}
+        <li>
+          <a href="{{ url_for('blog_detail', slug=post.slug) }}">{{ post.title }}</a>
+          {% if post.date %}<span class="muted">({{ post.date }})</span>{% endif %}
+        </li>
+      {% else %}
+        <li>まだブログ記事はありません。</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>ギャラリー（最新3件）</h2>
+    <ul>
+      {% for item in latest_gallery_items %}
+        <li><a href="{{ url_for('gallery_detail', item_id=item.id) }}">{{ item.title }}</a></li>
+      {% else %}
+        <li>まだギャラリーはありません。</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>ゲーム（最新3件）</h2>
+    <ul>
+      {% for game in latest_games %}
+        <li><a href="{{ url_for('games_detail', slug=game.slug) }}">{{ game.title }}</a></li>
+      {% else %}
+        <li>まだゲームはありません。</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
